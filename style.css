@@ -66,11 +66,11 @@ h2 {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-.desktop-col-2 {
+/* .desktop-col-2 {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
+} */
 
 .card div {
   display: flex;
@@ -110,28 +110,59 @@ h2 {
   border-top: 4px solid var(--blue);
 }
 
+/* Tablet Layout Breakpoint */
 @media (min-width: 600px) {
   .card-1 {
     grid-area: supervisor;
   }
-
-  .desktop-col-2 {
-    grid-area: column-2;
+  .card-2 {
+    grid-area: team-builder;
   }
+
+  .card-3 {
+    grid-area: karma;
+  }
+
   .card-4 {
     grid-area: calculator;
   }
   .grid-container {
-    display: grid;
-    place-content: center;
-    gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas: "supervisor column-2 calculator";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "team-builder team-builder"
+      "supervisor karma"
+      "calculator calculator";
+    /* align-items: center; */
   }
 
-  .card-1,
+  .card-2,
   .card-4 {
-    align-self: center;
+    /* align-self: center; */
+    justify-self: center;
+  }
+}
+
+/* Desktop Layout Breakpoint */
+@media (min-width: 1024px) {
+  .card-1 {
+    grid-area: supervisor;
+  }
+  .card-2 {
+    grid-area: team-builder;
+  }
+
+  .card-3 {
+    grid-area: karma;
+  }
+
+  .card-4 {
+    grid-area: calculator;
+  }
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "supervisor team-builder calculator"
+      "supervisor karma calculator";
+    align-items: center;
   }
 }
