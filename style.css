@@ -55,7 +55,6 @@ h2 {
   display: grid;
   place-content: center;
   gap: 2rem;
-  grid-template-areas: none;
 }
 
 .card {
